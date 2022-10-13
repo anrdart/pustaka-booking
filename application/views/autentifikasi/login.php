@@ -26,7 +26,7 @@
                                             <label class="custom-control-label" for="custom-Check">Remember Me</label>
                                         </div>
                                     </div>
-                                    <a href="latihan" class="btn btn-primary btn-user btn-block">
+                                    <a href="login" class="btn btn-primary btn-user btn-block">
                                         Login
                                     </a>
                                     <hr>
