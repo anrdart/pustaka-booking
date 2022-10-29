@@ -13,10 +13,11 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
+                        <th scope="col">#</th>
                         <th scope="col">NIS</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Kelas</th>
-                        <th scope="col">Tanggal Lahyir</th>
+                        <th scope="col">Tanggal Lahir</th>
                         <th scope="col">Tempat Lahir</th>
                         <th scope="col">Alamat</th>
                         <th scope="col">Jenis Kelamin</th>
@@ -39,8 +40,8 @@
                             <td><?= $sw['gender']; ?></td>
                             <td><?= $sw['agama']; ?></td>
                             <td>
-                                <a href="<?= base_url('siswa/ubahsiswa/') . $sw['nis']; ?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-                                <a href="<?= base_url('siswa/hapussiswa/') . $sw['nis']; ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $nama . ' ' . $sw['nama']; ?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                <a href="<?= base_url('siswa/updateSiswa/') . $sw['nis']; ?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                                <a href="<?= base_url('siswa/hapusSiswa/') . $sw['nis']; ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul . ' ' . $sw['nama']; ?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -67,34 +68,34 @@
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="nis" name="nis" placeholder="Masukkan NIS">
                     </div>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="Masukkan Nama Siswa">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="kelas" name="kelas" placeholder="Masukkan Kelas Siswa">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="tanggal_lahir" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="tempat_lahir" name="tempat_lahir" placeholder="Masukkan Tempat Lahir">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="alamat" name="alamat" placeholder="Masukkan Alamat Siswa">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="gender" name="gender" placeholder="Masukkan Jenis Kelamin Siswa">
-                </div>
-                <div class="form-group">
-                    <select name="kategori" class="form-control form-control-user">
-                        <option value="">Pilih Agama</option>
-                        <?php
-                        $ag = ['Islam', 'Kristen', 'Katolik', 'Budha', 'Hindu', 'Protestan', 'Khonghucu'];
-                        for ($i = 0; $i < 7; $i++) { ?>
-                            <option value="<?= $ag[$i]; ?>"><?= $ag[$i]; ?></option>
-                        <?php } ?>
-                    </select>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="Masukkan Nama Siswa">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="kelas" name="kelas" placeholder="Masukkan Kelas Siswa">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="tanggal_lahir" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="tempat_lahir" name="tempat_lahir" placeholder="Masukkan Tempat Lahir">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="alamat" name="alamat" placeholder="Masukkan Alamat Siswa">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="gender" name="gender" placeholder="Masukkan Jenis Kelamin Siswa">
+                    </div>
+                    <div class="form-group">
+                        <select name="agama" class="form-control form-control-user">
+                            <option value="">Pilih Agama</option>
+                            <?php
+                            $ag = ['Islam', 'Kristen', 'Katolik', 'Budha', 'Hindu', 'Protestan', 'Khonghucu'];
+                            for ($i = 0; $i < 7; $i++) { ?>
+                                <option value="<?= $ag[$i]; ?>"><?= $ag[$i]; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> Close</button>

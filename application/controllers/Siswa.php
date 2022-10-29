@@ -1,5 +1,5 @@
 <?php
-
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Siswa extends CI_Controller
 {
@@ -10,18 +10,12 @@ class Siswa extends CI_Controller
     }
 
     // Region Siswa
-    public function index() 
+    public function index()
     {
-        $data['nama'] = 'Data Siswa';
+        $data['judul'] = 'Data Siswa';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['siswa'] = $this->ModelSiswa->getSiswa()->result_array();
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('siswa/index', $data);
-        $this->load->view('templates/footer');
-
         $this->form_validation->set_rules(
             'nis',
             'NIS',
@@ -85,32 +79,40 @@ class Siswa extends CI_Controller
                 'required' => 'Jenis Kelamin harus diisi'
             ]
         );
-        $data = [
-            'nis' => $this->input->post('nis', true),
-            'nama' => $this->input->post('nama', true),
-            'kelas' => $this->input->post('kelas', true),
-            'tanggal_lahir' => $this->input->post('tanggal_lahir', true),
-            'tempat_lahir' => $this->input->post('tempat_lahir', true),
-            'alamat' => $this->input->post('alamat', true),
-            'gender' => $this->input->post('gender', true),
-            'agama' => $this->input->post('agama', true),
+        $this->form_validation->set_rules('agama', 'Agama', 'required', [
+            'required' => 'Agama harus diisi'
+        ]);
 
-        ];
-        $this->ModelSiswa->simpanSiswa($data);
-        redirect('siswa');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('siswa/index', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $data = [
+                'nis' => $this->input->post('nis', true),
+                'nama' => $this->input->post('nama', true),
+                'kelas' => $this->input->post('kelas', true),
+                'tanggal_lahir' => $this->input->post('tanggal_lahir', true),
+                'tempat_lahir' => $this->input->post('tempat_lahir', true),
+                'alamat' => $this->input->post('alamat', true),
+                'gender' => $this->input->post('gender', true),
+                'agama' => $this->input->post('agama', true)
+            ];
+
+            $this->ModelSiswa->simpanSiswa($data);
+            redirect('siswa');
+        }
     }
 
-    public function ubahSiswa()
+    public function updateSiswa()
     {
-        $data['nama'] = 'Ubah Data Siswa';
+        $data['judul'] = 'Ubah Data Siswa';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-        $data['siswa'] = $this->ModelSiswa->siswaWhere(['nis' => $this->uri->segment(3)])->row_array();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('siswa/ubah_siswa', $data);
-        $this->load->view('templates/footer');
+        $data['siswa'] = $this->ModelSiswa->siswaWhere(['nis' => $this->uri->segment(3)])->result_array();
+        // $data['siswa'] = $this->ModelSiswa->getSiswa()->result_array();
+        $data['agama'] = ['Islam', 'Kristen', 'Katolik', 'Budha', 'Hindu', 'Protestan', 'Khonghucu'];
 
 
         $this->form_validation->set_rules(
@@ -176,20 +178,31 @@ class Siswa extends CI_Controller
                 'required' => 'Jenis Kelamin harus diisi'
             ]
         );
+        $this->form_validation->set_rules('agama', 'Agama', 'required', [
+            'required' => 'Agama harus diisi'
+        ]);
 
-        $data = [
-            'nis' => $this->input->post('nis', true),
-            'nama' => $this->input->post('nama', true),
-            'kelas' => $this->input->post('kelas', true),
-            'tanggal_lahir' => $this->input->post('tanggal_lahir', true),
-            'tempat_lahir' => $this->input->post('tempat_lahir', true),
-            'alamat' => $this->input->post('alamat', true),
-            'gender' => $this->input->post('gender', true),
-            'agama' => $this->input->post('agama', true),
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('siswa/ubah_siswa', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $data = [
+                'nis' => $this->input->post('nis', true),
+                'nama' => $this->input->post('nama', true),
+                'kelas' => $this->input->post('kelas', true),
+                'tanggal_lahir' => $this->input->post('tanggal_lahir', true),
+                'tempat_lahir' => $this->input->post('tempat_lahir', true),
+                'alamat' => $this->input->post('alamat', true),
+                'gender' => $this->input->post('gender', true),
+                'agama' => $this->input->post('agama', true)
+            ];
 
-        ];
-        $this->ModelSiswa->updateSiswa($data, ['nis' => $this->input->post('nis')]);
-        redirect('siswa');
+            $this->ModelSiswa->updateSiswa($data, ['nis' => $this->input->post('nis')]);
+            redirect('siswa');
+        }
     }
 
     public function hapusSiswa()

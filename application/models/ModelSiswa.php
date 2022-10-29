@@ -14,17 +14,17 @@ class ModelSiswa extends CI_Model
         return $this->db->get_where('siswa', $where);
     }
 
-    public function simpanSiswa($data)
+    public function simpanSiswa($data = null)
     {
         $this->db->insert('siswa', $data);
     }
 
-    public function updateSiswa($data, $where)
+    public function updateSiswa($data = null, $where = null)
     {
         $this->db->update('siswa', $data, $where);
     }
 
-    public function hapusSiswa($where)
+    public function hapusSiswa($where = null)
     {
         $this->db->delete('siswa', $where);
     }
