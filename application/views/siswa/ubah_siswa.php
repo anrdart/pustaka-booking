@@ -41,7 +41,7 @@
                                 <select name="agama" class="form-control form-control-user">
                                     <option value="<?= $ag; ?>">Data tidak berubah...</option>
                                     <?php foreach ($agama as $ag) { ?>
-                                        <option value="<?= $ag['id_siswa']; ?>"><?= $ag['agama']; ?></option>
+                                        <option value="<?= $ag['nis']; ?>"><?= $ag['agama']; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

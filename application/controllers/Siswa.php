@@ -9,17 +9,17 @@ class Siswa extends CI_Controller
         cek_login();
     }
 
-    // Region Buku
-    public function index()
+    // Region Siswa
+    public function index() 
     {
-        $data['nis'] = 'Data Siswa';
+        $data['nama'] = 'Data Siswa';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['siswa'] = $this->ModelSiswa->getSiswa()->result_array();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('siswa', $data);
+        $this->load->view('siswa/index', $data);
         $this->load->view('templates/footer');
 
         $this->form_validation->set_rules(
@@ -96,15 +96,15 @@ class Siswa extends CI_Controller
             'agama' => $this->input->post('agama', true),
 
         ];
-        $this->ModelBuku->simpanBuku($data);
-        redirect('buku');
+        $this->ModelSiswa->simpanSiswa($data);
+        redirect('siswa');
     }
 
     public function ubahSiswa()
     {
-        $data['nis'] = 'Ubah Data Siswa';
+        $data['nama'] = 'Ubah Data Siswa';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-        $data['siswa'] = $this->ModelSiswa->siswaWhere(['id_siswa' => $this->uri->segment(3)])->row_array();
+        $data['siswa'] = $this->ModelSiswa->siswaWhere(['nis' => $this->uri->segment(3)])->row_array();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -188,13 +188,13 @@ class Siswa extends CI_Controller
             'agama' => $this->input->post('agama', true),
 
         ];
-        $this->ModelBuku->updateBuku($data, ['id' => $this->input->post('id')]);
-        redirect('buku');
+        $this->ModelSiswa->updateSiswa($data, ['nis' => $this->input->post('nis')]);
+        redirect('siswa');
     }
 
     public function hapusSiswa()
     {
-        $where = ['id_siswa' => $this->uri->segment(3)];
+        $where = ['nis' => $this->uri->segment(3)];
         $this->ModelSiswa->hapusSiswa($where);
         redirect('siswa');
     }

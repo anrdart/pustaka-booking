@@ -13,7 +13,6 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">NIS</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Kelas</th>
@@ -31,7 +30,6 @@
                     foreach ($siswa as $sw) { ?>
                         <tr>
                             <th scope="row"><?= $a++; ?></th>
-                            <td><?= $sw['id_siswa']; ?></td>
                             <td><?= $sw['nis']; ?></td>
                             <td><?= $sw['nama']; ?></td>
                             <td><?= $sw['kelas']; ?></td>
@@ -41,8 +39,8 @@
                             <td><?= $sw['gender']; ?></td>
                             <td><?= $sw['agama']; ?></td>
                             <td>
-                                <a href="<?= base_url('siswa/ubahsiswa/') . $sw['id_siswa']; ?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-                                <a href="<?= base_url('siswa/hapussiswa/') . $sw['id_siswa']; ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $nis . ' ' . $sw['nis']; ?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                <a href="<?= base_url('siswa/ubahsiswa/') . $sw['nis']; ?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                                <a href="<?= base_url('siswa/hapussiswa/') . $sw['nis']; ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $nama . ' ' . $sw['nama']; ?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
                             </td>
                         </tr>
                     <?php } ?>
