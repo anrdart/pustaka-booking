@@ -18,7 +18,7 @@
                         <div class='col-sm-9'>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="nis" name="nis" placeholder="Masukkan NIS" value="<?= $sw['nis']; ?>">
+                                    <input type="number" class="form-control form-control-user" id="nis" name="nis" placeholder="Masukkan NIS" value="<?= $sw['nis']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="Masukkan Nama Siswa" value='<?= $sw['nama']; ?>'>
@@ -27,16 +27,23 @@
                                     <input type="text" class="form-control form-control-user" id="kelas" name="kelas" placeholder="Masukkan Kelas" value='<?= $sw['kelas']; ?>'>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="tanggal_lahir" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" value='<?= $sw['tanggal_lahir']; ?>'>
+                                    <input type="date" class="form-control form-control-user" id="tanggal_lahir" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" value='<?= $sw['tanggal_lahir']; ?>'>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="tempat_lahir" name="tempat_lahir" placeholder="Masukkan Tempat Lahir" value='<?= $sw['tempat_lahir']; ?>'>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="alamat" name="alamat" placeholder="Masukkan Alamat" value='<?= $sw['alamat']; ?>'>
+                                    <input type="text" class="form-control form-control-user" rows="4" id="alamat" name="alamat" placeholder="Masukkan Alamat" value='<?= $sw['alamat']; ?>'>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="gender" name="gender" placeholder="Masukkan Jenis Kelamin" value='<?= $sw['gender']; ?>'>
+                                    <select name="gender" class="form-control form-control-user">
+                                        <option value="">Pilih Jenis Kelamin </option>
+                                        <?php
+                                        $gender = ['Pria', 'Wanita', 'Lainnya'];
+                                        for ($i = 0; $i < 3; $i++) { ?>
+                                            <option value="<?= $gender[$i]; ?>"><?= $gender[$i]; ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <select name="agama" class="form-control form-control-user">

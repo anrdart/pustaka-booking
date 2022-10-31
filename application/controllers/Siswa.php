@@ -178,9 +178,14 @@ class Siswa extends CI_Controller
                 'required' => 'Jenis Kelamin harus diisi'
             ]
         );
-        $this->form_validation->set_rules('agama', 'Agama', 'required', [
-            'required' => 'Agama harus diisi'
-        ]);
+        $this->form_validation->set_rules(
+            'agama',
+            'Agama',
+            'required',
+            [
+                'required' => 'Agama harus diisi'
+            ]
+        );
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
