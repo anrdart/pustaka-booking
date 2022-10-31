@@ -4,7 +4,12 @@
 
 <p align='center'>Ini adalah aplikasi web yang dibuat berdasarkan modul materi Web Programming II Universitas Bina Sarana Informatika, dengan menggunakan framework Codeigniter 3.</p>
 
-<p align='center'>Projek ini dibuat untuk memenuhi tugas Web Programming II Pertemuan 6 - 12.</p>
+Login Admin:
+admin@anrdart.com
+alul
+
+Jika ingin ke tampilan dashboard pada admin
+http://localhost/pustaka-booking/admin
 
 <br>
 <br>
