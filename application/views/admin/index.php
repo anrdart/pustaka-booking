@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Jumlah Anggota</div>
+                            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Members</div>
                             <div class="h1 mb-0 font-weight-bold text-white"><?= $this->ModelUser->getUserWhere(['role_id' => 1])->num_rows(); ?></div>
                         </div>
                         <div class="col-auto">
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Stok Buku Terdaftar
+                            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Registered Book Stock
                             </div>
                             <div class="h1 mb-0 font-weight-bold text-white">
                                 <?php
@@ -46,7 +46,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Buku yang dipinjam</div>
+                            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Borrowed book</div>
                             <div class="h1 mb-0 font-weight-bold text-white">
                                 <?php
                                 $where = ['dipinjam != 0'];
@@ -67,7 +67,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Buku yang dibooking
+                            <div class="text-md font-weight-bold text-white text-uppercase mb-1">Books that are booked
                             </div>
                             <div class="h1 mb-0 font-weight-bold text-white">
                                 <?php
@@ -92,19 +92,19 @@
     <div class="row">
         <div class="table-responsive table-bordered">
             <div class="page-header">
-                <span class="fas fa-users text-primary mt-2 "> Data
-                    User</span>
-                <a class="text-danger" href="<?php echo base_url('user/anggota'); ?>"><i class="fas fa-search mt-2 float-right"> Tampilkan</i></a>
+                <span class="fas fa-users text-primary mt-2 "> Members
+                    Data</span>
+                <a class="text-danger" href="<?php echo base_url('user/anggota'); ?>"><i class="fas fa-search mt-2 float-right"> Show</i></a>
             </div>
             <table class="table mt-3">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Nama Anggota</th>
+                        <th>No.</th>
+                        <th>Name</th>
                         <th>Email</th>
                         <th>Role ID</th>
-                        <th>Aktif</th>
-                        <th>Member Sejak</th>
+                        <th>Active</th>
+                        <th>Member Since</th>
                     </tr>
                 </thead>
 
@@ -126,21 +126,21 @@
         </div>
         <div class="table-responsive table-bordered">
             <div class="page-header">
-                <span class="fas fa-book text-warning mt-2"> Data
-                    Buku</span>
-                <a href="<?= base_url('buku'); ?>"><i class="fas fa-search text-primary mt-2 float-right"> Tampilkan</i></a>
+                <span class="fas fa-book text-warning mt-2"> Book
+                    Data</span>
+                <a href="<?= base_url('buku'); ?>"><i class="fas fa-search text-primary mt-2 float-right"> Show</i></a>
             </div>
             <div class="table-responsive">
                 <table class="table mt-3" id="table-datatable">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Judul Buku</th>
-                            <th>Pengarang</th>
-                            <th>Penerbit</th>
-                            <th>Tahun Terbit</th>
+                            <th>No.</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Publisher</th>
+                            <th>Publish</th>
                             <th>ISBN</th>
-                            <th>Stok</th>
+                            <th>Stock</th>
                         </tr>
                     </thead>
                     <tbody>

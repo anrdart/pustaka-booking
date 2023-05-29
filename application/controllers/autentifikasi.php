@@ -14,7 +14,7 @@ class Autentifikasi extends CI_Controller
         // Set method Validation untuk form
         $this->form_validation->set_rules(
             'email',
-            'Alamat Email',
+            'Email',
             'required|trim|valid_email',
             [
                 'required' => 'Email Harus diisi!!',

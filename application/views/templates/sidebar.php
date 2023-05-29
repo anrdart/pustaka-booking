@@ -22,7 +22,7 @@
                 <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('admin'); ?>">
-                    <i class="fa fa-fw fa book"></i>
+                    <i class="fa fa-fw fa-home"></i>
                     <span>Dashboard</span></a>
             </li>
             </li>
@@ -32,37 +32,37 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Master Data
+                Main Data
             </div>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('buku/kategori'); ?>">
-                    <i class="fa fa-fw fa book"></i>
-                    <span>Kategori Buku</span></a>
+                    <i class="fa fa-fw fa-filter"></i>
+                    <span>Book Category</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('buku'); ?>">
-                    <i class="fa fa-fw fa book"></i>
-                    <span>Data Buku</span></a>
+                    <i class="fa fa-fw fa-book"></i>
+                    <span>Book Data</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('user/anggota'); ?>">
-                    <i class="fa fa-fw fa book"></i>
-                    <span>Data Anggota</span></a>
+                    <i class="fa fa-fw fa-user"></i>
+                    <span>Member Data</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('siswa'); ?>">
-                    <i class="fa fa-fw fa book"></i>
-                    <span>Data Siswa</span></a>
+                    <i class="fa fa-fw fa-graduation-cap"></i>
+                    <span>Student Data</span></a>
             </li>
             </li>
 
             <hr class="sidebar-divider mt-3">
 
             <div class="sidebar-heading">
-                Transaksi
+                Transaction
             </div>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
@@ -70,12 +70,12 @@
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('pinjam'); ?>">
                     <i class="fa fa-fw fa-shopping-cart"></i>
-                    <span>Data Peminjaman</span></a>
+                    <span>Loan Data</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('pinjam/daftarBooking'); ?>">
                     <i class="fa fa-fw fa-list"></i>
-                    <span>Data Booking</span></a>
+                    <span>Booking Data</span></a>
             </li>
             </li>
 
@@ -83,7 +83,7 @@
             <hr class="sidebar-divider mt-3">
 
             <div class="sidebar-heading">
-                Laporan
+                Report
             </div>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
@@ -91,17 +91,17 @@
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_buku'); ?>">
                     <i class="fa fa-fw fa-address-book"></i>
-                    <span>Laporan Data Buku</span></a>
+                    <span>Book Data Report</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_anggota'); ?>">
                     <i class="fa fa-fw fa-address-book"></i>
-                    <span>Laporan Data Anggota</span></a>
+                    <span>Member Data Report</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_pinjam'); ?>">
                     <i class="fa fa-fw fa-address-book"></i>
-                    <span>Laporan Peminjaman</span></a>
+                    <span>Loan Data Report</span></a>
             </li>
             </li>
 
